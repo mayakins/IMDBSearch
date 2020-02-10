@@ -23,7 +23,6 @@ class IMDB:
                 year = item.find(class_="lister-item-year text-muted unbold").text[1:-1]
                 genres = item.p.find(class_="genre").text[1:]
                 genres = genres.translate({ord(c): None for c in string.whitespace})
-                # print(genres)
                 genres = genres.split(',')
                 votes = item.find(class_="sort-num_votes-visible")
                 people = votes.find_previous('p')
