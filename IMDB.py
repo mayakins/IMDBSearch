@@ -42,7 +42,6 @@ class IMDB:
             i += 50
 
     def search(self, search_terms):
-        print(self.movie_map)
         if len(search_terms) > 0:
             if search_terms[0] not in self.keyword_map:
                 print(search_terms[0], "not found")

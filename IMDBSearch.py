@@ -1,5 +1,6 @@
 from IMDB import IMDB
 import argparse
+import sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--director", type=str, nargs='+', default=[])
@@ -24,6 +25,11 @@ if args.year is not None:
     search_terms.append(str(args.year))
 if args.genre is not None:
     search_terms.append(args.genre)
+
+if len(search_terms) == 0:
+    print("Please provide at least one search term (movie title, director, actor, genre, or year)")
+    print("Use --help for more info")
+    sys.exit()
 
 data = IMDB()
 data.search(search_terms)
