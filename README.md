@@ -46,8 +46,10 @@ It extracts the movie title and maps it to a id number(the ranking of the movie 
 
 To search, it will take the intersection of all sets of given keywords in the keywords map. Given this list of movie ids, it map these back to movie titles using the movies map.
 
-Example: IMDBSearch.py -d "Frank Darabont" -y 1994
+Example:
 ```
+IMDBSearch.py -d "Frank Darabont" -y 1994
+
 keywords["Frank Darabont"] ∩ keywords[1994] => [1] => ["The Shawshank Redemption"]
 ```
 
@@ -71,7 +73,7 @@ Currently, running the script will crawl the IMDB top 1000 list and put this int
 **Allowing search of plain string:**
 Currently, I require you to split your search by search term type. This allows me to take out the guess work about where to break up search keywords. It would be a simpler, more intuitive user experience if this could just take in a search phrase as one string.
 
-**Allowing pieces non full-names:**
+**Allowing pieces of data (not full-names):**
 Currently, you can only search full names and titles. This could be solved using the current data structure by breaking down each piece of data into separate words (excluding filler words like the, of, at) and putting those keywords into our search hashmap. However, this would greatly increase the size of our data structure and create a lot of duplicate data storage. For example, "Brad" and "Pitt" would both have lists to all Brad Pitt movies.
 
 **Differentiate data by type:**
